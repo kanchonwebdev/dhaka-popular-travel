@@ -1,0 +1,41 @@
+/* use by mixin
+=============== */
+@mixin primary-btn {
+    display: inline-block;
+    font-size: calc(25px + (40 - 25) * ((100vw - 320px) / (1920 - 320)));
+    padding: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320))) calc(20px + (25 - 20) * ((100vw - 320px) / (1920 - 320)));
+    text-align: center;
+    border-radius: 5px;
+    text-transform: uppercase;
+    color: #fff;
+    background: #222;
+    transition: all 0.5s ease;
+}
+
+@mixin secondary-btn {}
+
+@mixin primary-btn-hover {}
+
+@mixin secondary-btn-hover {}
+
+/* use by class name
+==================== */
+.primary-btn {
+    @include primary-btn();
+}
+
+.secondary-btn {
+    @include secondary-btn();
+}
+
+.custom-btn-block{
+    padding: calc(30px + (80 - 30) * ((100vw - 320px) / (1920 - 320))) 5%;
+    padding-top: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .btn{
+        @include primary-btn();
+    }
+}

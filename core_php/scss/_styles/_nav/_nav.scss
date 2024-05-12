@@ -1,0 +1,377 @@
+/* Nav Container Style
+---------------------- */
+.nav-container {
+    @include secondary-font();
+    transition: 0.5s;
+    position: fixed;
+    top: 0;
+    z-index: 9;
+    width: 100%;
+
+    &.active-position {
+        top: -35px;
+        left: 0;
+        box-shadow: 1px 1px 10px rgba(158, 158, 158, 0.473);
+        background: #fff;
+
+        .navbar {
+            .left-col {
+                .logo {
+                    a {
+                        color: #222;
+                    }
+                }
+            }
+
+            .middle-col {
+                .nav-menu {
+                    .nav-link {
+                        .menu-link {
+                            color: #222;
+                        }
+                    }
+                }
+            }
+
+            .right-col {
+                .top-col {
+                    a {
+                        color: #222;
+                    }
+
+                    .btn {
+                        color: #222;
+                        border: 1px solid #222;
+
+                        @include max-width-1023 {
+                            color: #fff;
+                            border: 1px solid #fff;
+                        }
+                    }
+                }
+            }
+
+            #ham-icon {
+                .icon-bar {
+                    background: #222 !important;
+                }
+            }
+        }
+    }
+
+    /* Topbar Style
+    --------------- */
+    .topbar {
+        width: 100%;
+        padding: 0px 5%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #fff;
+        min-height: 35px;
+
+        .left-col {
+            font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
+        }
+
+        .right-col {
+            font-size: calc(17px + (20 - 17) * ((100vw - 320px) / (1920 - 320)));
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            gap: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320)));
+
+            @include phone-767 {
+                flex-direction: row;
+                width: 100%;
+                align-items: center;
+                gap: 15px;
+            }
+        }
+
+        .top-col,
+        .bottom-col {
+            display: flex;
+            align-items: center;
+            gap: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320)));
+
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+
+                .icon {
+                    display: flex;
+                    align-items: center;
+                    gap: calc(5px + (10 - 5) * ((100vw - 320px) / (1920 - 320)));
+                    font-size: calc(18px + (21 - 18) * ((100vw - 320px) / (1920 - 320)));
+                }
+
+                .text {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    margin-top: 1px;
+
+                    @include max-width-1023 {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .bottom-col {
+            gap: 0px;
+
+            a {
+                font-size: calc(18px + (21 - 18) * ((100vw - 320px) / (1920 - 320)));
+
+                &:first-child {
+                    margin-right: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320)));
+                }
+
+                .text {
+                    @include phone-767 {
+                        display: flex;
+                    }
+                }
+            }
+        }
+    }
+
+    /* Navbar Style
+    --------------- */
+    .navbar {
+        padding: 0px 5%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: calc(10px + (80 - 10) * ((100vw - 320px) / (1920 - 320)));
+        min-height: 80px;
+
+        @include max-width-1023 {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @include phone-767 {
+            min-height: 60px;
+        }
+
+        .left-col {
+            display: flex;
+            order: 2;
+            align-items: center;
+            justify-content: center;
+
+            @include max-width-1023 {
+                order: 1;
+            }
+
+            .logo {
+                a {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #fff;
+                    font-weight: 500;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    h2 {
+                        font-size: calc(20px + (45 - 20) * ((100vw - 320px) / (1920 - 320)));
+                    }
+                }
+            }
+        }
+
+        .middle-col {
+            display: flex;
+            align-items: center;
+            order: 1;
+
+            @include max-width-1023 {
+                order: 3;
+            }
+
+            .top-col {
+                display: flex;
+                align-items: center;
+                gap: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320)));
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10px;
+
+                    .icon {
+                        display: flex;
+                        align-items: center;
+                        gap: calc(5px + (10 - 5) * ((100vw - 320px) / (1920 - 320)));
+                        font-size: calc(18px + (21 - 18) * ((100vw - 320px) / (1920 - 320)));
+                    }
+                }
+            }
+        }
+
+        .right-col {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: calc(20px + (25 - 20) * ((100vw - 320px) / (1920 - 320)));
+            font-size: calc(18px + (21 - 18) * ((100vw - 320px) / (1920 - 320)));
+            order: 3;
+
+            @include max-width-1023 {
+                order: 2;
+
+                margin-right: 45px;
+            }
+
+            @include phone-767 {
+                justify-content: flex-end;
+            }
+
+            .top-col {
+                display: flex;
+                align-items: center;
+                gap: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320)));
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10px;
+                    color: #fff;
+
+                    .icon {
+                        display: flex;
+                        align-items: center;
+                        gap: calc(5px + (10 - 5) * ((100vw - 320px) / (1920 - 320)));
+                        font-size: calc(18px + (21 - 18) * ((100vw - 320px) / (1920 - 320)));
+                    }
+
+                    sup {
+                        transform: translateY(-5px);
+                    }
+                }
+
+                .btn {
+                    padding: calc(5px + (8 - 5) * ((100vw - 320px) / (1920 - 320))) calc(10px + (15 - 10) * ((100vw - 320px) / (1920 - 320)));
+                    border: 1px solid #fff;
+                    color: #fff;
+
+                    @include max-width-1023 {
+                        position: fixed;
+                        bottom: 10px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        z-index: 1;
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            bottom: 0;
+                            left: 50%;
+                            width: 100%;
+                            height: 100%;
+                            transform: translateX(-50%) scaleX(10) scaleY(1.7);
+                            background: #222;
+                            z-index: -2;
+                        }
+                    }
+                }
+            }
+        }
+
+        #ham-icon {
+            display: flex !important;
+
+            .icon-bar {
+                background: #fff !important;
+            }
+        }
+    }
+}
+
+/* Nav Overlay Style
+-------------------- */
+#nav-overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: calc(30px + (80 - 30) * ((100vw - 320px) / ((1920 - 320))));
+    z-index: 9;
+    background: #222;
+    padding: 5%;
+
+    @include phone-767{
+        flex-direction: column;
+    }
+
+    .nav-menu {
+        display: grid;
+        gap: calc(20px + (30 - 20) * ((100vw - 320px) / (1920 - 320)));
+
+        .menu-link {
+            text-align: center;
+            overflow: hidden;
+
+            .nav-link {
+                color: #fff;
+                font-size: calc(25px + (45 - 25) * ((100vw - 320px) / (1920 - 320)));
+                display: block;
+            }
+        }
+    }
+
+    .line {
+        width: 2px;
+        height: calc(30px + (80 - 30) * ((100vw - 320px) / (1920 - 320)));
+        background: #fff;
+        display: block;
+        position: relative;
+        transform: scaleY(0);
+    }
+
+    .nav-address {
+        display: grid;
+        gap: calc(20px + (30 - 20) * ((100vw - 320px) / (1920 - 320)));
+
+        .address-block {
+            overflow: hidden;
+
+            .nav-menu {
+                color: #fff;
+                font-size: calc(18px + (25 - 18) * ((100vw - 320px) / (1920 - 320)));
+                display: flex;
+                align-items: center;
+                gap: calc(10px + (15 - 10) * ((100vw - 320px) / (1920 - 320)));
+                justify-content: center;
+            }
+        }
+    }
+
+    .close {
+        position: fixed;
+        top: 25px;
+        right: 25px;
+        color: #fff;
+        font-size: 21px;
+    }
+}
+
+@include max-width-1023 {
+    body {
+        margin-bottom: 50px;
+    }
+}

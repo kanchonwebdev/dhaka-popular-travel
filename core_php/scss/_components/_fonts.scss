@@ -1,0 +1,34 @@
+/* @font-face {
+    font-family: 'Moldern';
+    src: url("../fonts/MoldernRegular-MVR2J.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+} */
+@import url('https://fonts.googleapis.com/css2?family=Federo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Balthazar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carme&display=swap');
+
+/* use by mixin
+=============== */
+@mixin primary-font {
+    //font-family: 'Balthazar', serif;
+    //font-family: "Carme", sans-serif;
+    font-family: "Federo", sans-serif;
+}
+
+@mixin secondary-font {
+    //font-family: 'Balthazar', serif;
+    //font-family: "Carme", sans-serif;
+    font-family: "Federo", sans-serif;
+}
+
+/* use by class name 
+==================== */
+.primary-font{
+    @include primary-font();
+}
+
+.secondary-font {
+    @include secondary-font();
+}
