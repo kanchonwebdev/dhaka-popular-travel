@@ -1,0 +1,30 @@
+/* use by mixin
+=============== */
+@mixin primary-title{
+    font-size: calc(25px + (80 - 25) * ((100vw - 320px) / (1920 - 320)));
+    font-weight: 700;
+    @include secondary-font();
+}
+@mixin secondary-title{}
+
+/* use by class name
+==================== */
+.primary-title{
+    @include primary-title();
+}
+.secondary-title{
+    @include secondary-title();
+}
+
+.custom-title-block{
+    padding: calc(20px + (40 - 20) * ((100vw - 320px) / (1920 - 320))) 5%;
+    text-align: center;
+
+    &.pt-0{
+        padding-top: 0px;
+    }
+
+    .title{
+        @include primary-title();
+    }
+}

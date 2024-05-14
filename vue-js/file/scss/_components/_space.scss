@@ -1,0 +1,21 @@
+/* use by mixin
+=============== */
+@mixin container-padding{}
+@mixin container-margin{}
+
+/* use by class name
+==================== */
+.container-padding{
+    @include container-padding();
+}
+.container-margin{
+    @include container-margin();
+}
+
+.pt-80 {
+    padding-top: calc(30px + 50 * ((100vw - 320px) / (1920 - 320)))
+}
+
+.mt-80 {
+    margin-top: calc(30px + 50 * ((100vw - 320px) / (1920 - 320)))
+}
